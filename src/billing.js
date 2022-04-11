@@ -5,6 +5,7 @@ import { calculateCost } from './util/cost';
 export const main = handler(async(event) => {
     const { storage, source } = JSON.parse(event.body);
     const amount = calculateCost(storage);
+    console.log(`Charging ${amount} for ${storage} Gb of storage`);
     const description = 'Scratch charge';
 
     // Load our secret key from the environment variables
